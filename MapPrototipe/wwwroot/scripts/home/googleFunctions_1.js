@@ -58,9 +58,7 @@ function initAutocomplete() {
     //Escucho por cambios en el input para llenar textboxes y actualizar mapa
     autocomplete.addListener('place_changed', fillInAddress);
      
-    function geolocate() {
-        console.log("Navigator:");
-        console.log(navigator);
+    function geolocate() { 
         if (navigator.geolocation) {
             navigator.geolocation.getCurrentPosition(function (position) {
                 var geolocation = {
@@ -72,11 +70,8 @@ function initAutocomplete() {
                     radius: position.coords.accuracy
                 });
                 autocomplete.setBounds(circle.getBounds());
-            });
-
-        }
-
-
+            }); 
+        } 
     } 
  
     function actualizarMapa() { 
